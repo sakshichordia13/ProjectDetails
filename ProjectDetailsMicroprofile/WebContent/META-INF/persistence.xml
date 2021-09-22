@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/persistence">
+
+
+<persistence-unit transaction-type="RESOURCE_LOCAL" name="JPA-PU">
+
+<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+
+<properties>
+
+<!--using the dialect database specific commands are created -->
+
+
+<property name="dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+
+<property name="javax.persistence.jdbc.url" value=" jdbc:oracle:thin:@localhost:1521/XE"/>
+
+<property name="javax.persistence.jdbc.user" value="HR"/>
+
+<property name="javax.persistence.jdbc.password" value="hr"/>
+
+<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+
+<!-- using show_sql shows the commands which are generated on the console -->
+
+
+<property name="hibernate.show_sql" value="true"/>
+
+<!-- it automatically do the validation ,check whether table is created or does it existoptions are validate,update ,create, create-drop -->
+
+
+<property name="hibernate.hbm2ddl.auto" value="update"/>
+
+</properties>
+
+</persistence-unit>
+
+</persistence>
